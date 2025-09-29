@@ -14,8 +14,7 @@ class PostController extends Controller
     public function index()
     {
         $categories = Category::get();
-        $posts = Posts::get();
-        // dd($categories);
+        $posts = Posts::published()->with('category', 'user')->paginate(5);
         return view('dashboard', compact('categories', 'posts'));
     }
 

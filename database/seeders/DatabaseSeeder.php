@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
-        $categories = ['Technology', 'Health', 'Travel', 'Food', 'Lifestyle'];
+        $categories = [];
 
         foreach ($categories as $category) {
             \App\Models\Category::factory()->create(['name' => $category]);
